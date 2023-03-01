@@ -1,11 +1,12 @@
 
 package com.miportfolio.SpringBoot.repository;
 
-import com.miportfolio.SpringBoot.model.Persona;
+import com.miportfolio.SpringBoot.model.Experiencia;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PersonaRepository extends JpaRepository<Persona, Integer> {
-     
+public interface ExperienciaRepository extends JpaRepository<Experiencia, Long> {
+    
 }
