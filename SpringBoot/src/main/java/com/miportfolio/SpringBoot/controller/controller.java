@@ -5,10 +5,12 @@ import com.miportfolio.SpringBoot.model.Estudio;
 import com.miportfolio.SpringBoot.model.Experiencia;
 import com.miportfolio.SpringBoot.model.Persona;
 import com.miportfolio.SpringBoot.model.Proyecto;
+import com.miportfolio.SpringBoot.model.Skill;
 import com.miportfolio.SpringBoot.service.EstudioService;
 import com.miportfolio.SpringBoot.service.ExperienciaService;
 import com.miportfolio.SpringBoot.service.PersonaService;
 import com.miportfolio.SpringBoot.service.ProyectoService;
+import com.miportfolio.SpringBoot.service.SkillService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -146,6 +148,31 @@ public class Controller {
        proyecServ.modificarProyecto(proyec);
    }
    
+   
+   //CLASE SKILL
+   @Autowired
+   public SkillService skillServ;
+   
+   @GetMapping("/skills")
+   @ResponseBody
+   public List<Skill>verSkills(){
+       return skillServ.verSkills();
+   }
+   
+   @PostMapping("/skill/agregar")
+   public void agregarSkill(@RequestBody Skill ski){
+       skillServ.agregarSkill(ski);
+   }
+   
+   @DeleteMapping("/skill/eliminar")
+   public void eliminarSkill(@RequestBody Long id){
+       skillServ.eliminarSkill(id);
+   }
+   
+   @PutMapping("skill/modificar")
+   public void modificarSkill(@RequestBody Skill ski){
+       skillServ.modificarSkill(ski);
+   }
    
    
    
