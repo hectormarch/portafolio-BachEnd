@@ -70,7 +70,7 @@ public class Controller {
    ExperienciaService expeServ;
     
   
-   @GetMapping("/experiencias")
+   @GetMapping("/experiencia")
    @ResponseBody
    public List<Experiencia>verExperiencia(){
        return expeServ.verExperiencia();
